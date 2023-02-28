@@ -2,7 +2,7 @@ package pcha;
 import java.util.*;
 
      /*
-     * ChavviCalc assignment for CSIS 26
+     * ChavviCalc complete code
      */
     public class App {
 
@@ -15,7 +15,7 @@ import java.util.*;
           Scanner scan = new Scanner(System.in);
           Character command = '_';
       
-          // loop until user quits
+          // allow the user to use the clalulator as long as q is not entered as a command
           while (command != 'q') {
             printMenu();
             System.out.print("Enter a command: ");
@@ -27,9 +27,9 @@ import java.util.*;
           scan.close();
         }
       
-        //
+       
         // menu functions
-        //
+     
         private static void printMenuLine() {
           System.out.println(
             "----------------------------------------------------------"
@@ -40,7 +40,7 @@ import java.util.*;
           System.out.printf("%s\t%s\n", command, desc);
         }
       
-        // prints the menu
+        // Menu printing code
         public static void printMenu() {
           printMenuLine();
           System.out.println("ChavviCalc");
@@ -65,7 +65,7 @@ import java.util.*;
           printMenuLine();
         }
       
-        // get first character from input
+        // getting the fisrt value from the user input
         private static Character menuGetCommand(Scanner scan) {
           Character command = '_';
       
@@ -79,7 +79,7 @@ import java.util.*;
           return command;
         }
       
-        // calculator functions
+        // Assigning the functions to their signs
         private static Boolean executeCommand(Scanner scan, Character command) {
             Boolean success = true;
           
@@ -92,7 +92,7 @@ import java.util.*;
                 if (scan.hasNextFloat()) {
                   A = scan.nextFloat();
                 } else {
-                  System.out.println("ERROR: the value entered is not a floating point number");
+                  System.out.println("ERROR: Enter a valid number(3 decimal places for fractions)");
                 }
                 scan.nextLine();
                 break;
@@ -101,7 +101,7 @@ import java.util.*;
                 if (scan.hasNextFloat()) {
                   B = scan.nextFloat();
                 } else {
-                  System.out.println("ERROR: the value entered is not a floating point number");
+                  System.out.println("ERROR: Enter a valid number(3 decimal places for fractions)");
                 }
                 scan.nextLine();
                 break;
